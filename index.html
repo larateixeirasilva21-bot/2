@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jovens do Futuro - Educação & Bem-Estar</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f6ff',
+                            100: '#e0edff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 glass-card border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight">Jovens<span class="text-blue-600 dark:text-blue-400">Futuro</span></span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#pilares" class="font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Pilares</a>
+                    <a href="#quiz" class="font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Diagnosticador</a>
+                    <a href="#mural" class="font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Mural de Ideias</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <button id="themeToggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all text-slate-600 dark:text-slate-300">
+                        <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                        <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                    </button>
+                    <a href="#mural" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all shadow-md shadow-blue-500/20 active:scale-95">
+                        <i data-lucide="message-square-plus" class="w-4 h-4"></i>
+                        <span>Contribuir</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <div class="absolute inset-0 -z-10 opacity-30 dark:opacity-20">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-blue-400 to-purple-500 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/50 text-blue-700 dark:text-blue-300 text-xs font-semibold uppercase tracking-wider mb-6 animate-pulse-slow">
+                <i data-lucide="rocket" class="w-4 h-4"></i>
+                <span>Transformação Educacional & Pessoal</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Empoderando a próxima geração com <br class="hidden sm:inline"/>
+                <span class="gradient-text">Educação e Bem-Estar</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-slate-600 dark:text-slate-300 mb-10 leading-relaxed">
+                Um ecossistema focado no desenvolvimento integral do jovem. Conectamos tecnologia, saúde mental, habilidades interpessoais e preparação para o mercado.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#quiz" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-base transition-all shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 active:scale-95">
+                    <span>Faça o Teste de Hábitos</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#pilares" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-bold text-base transition-all flex items-center justify-center gap-2 active:scale-95">
+                    <span>Explorar Pilares</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pilares do Futuro -->
+    <section id="pilares" class="py-16 bg-slate-100/50 dark:bg-slate-900/50 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-4">Os 4 Pilares do Futuro</h2>
+                <p class="text-slate-600 dark:text-slate-400">A fundação para um desenvolvimento jovem equilibrado, inovador e relevante no século XXI.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Pilar 1 -->
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-blue-500/50 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="laptop" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Educação Tech</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Acesso a pensamento computacional, IA, alfabetização digital e programação para resolver problemas reais.
+                    </p>
+                    <span class="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400">Inovação & Ferramentas →</span>
+                </div>
+
+                <!-- Pilar 2 -->
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-purple-500/50 group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="brain" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Saúde Mental</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Inteligência emocional, ambiente seguro contra ansiedade, gestão do estresse e autoconhecimento.
+                    </p>
+                    <span class="inline-block text-xs font-semibold text-purple-600 dark:text-purple-400">Equilíbrio & Foco →</span>
+                </div>
+
+                <!-- Pilar 3 -->
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-500/50 group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Soft Skills</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Comunicação assertiva, trabalho em equipe, liderança empática e capacidade adaptativa.
+                    </p>
+                    <span class="inline-block text-xs font-semibold text-emerald-600 dark:text-emerald-400">Conexão Humana →</span>
+                </div>
+
+                <!-- Pilar 4 -->
+                <div class="glass-card p-6 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-amber-500/50 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Oportunidades</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Ponte para o primeiro emprego, mentoria profissional, empreendedorismo e educação financeira.
+                    </p>
+                    <span class="inline-block text-xs font-semibold text-amber-600 dark:text-amber-400">Carreira & Autonomia →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz & Calculadora -->
+    <section id="quiz" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-3">Diagnosticador de Hábitos</h2>
+                <p class="text-slate-600 dark:text-slate-400">Avalie como está o seu equilíbrio entre estudos, descanso e saúde emocional.</p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
+                <form id="quizForm" class="space-y-8">
+                    <!-- Pergunta 1 -->
+                    <div>
+                        <label class="block font-semibold text-lg mb-3">1. Quantas horas de sono de qualidade você costuma ter por noite?</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <label class="flex items-center p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                                <input type="radio" name="p1" value="1" class="text-blue-600 focus:ring-blue-500" required>
+                                <span class="ml-3 text-sm font-medium">Menos de 6h</span>
+                            </label>
+                            <label class="flex items-center p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                                <input type="radio" name="p1" value="2" class="text-blue-600 focus:ring-blue-500">
+                                <span class="ml-3 text-sm font-medium">Entre 6h e 7h</span>
+                            </label>
+                            <label class="flex items-center p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                                <input type="radio" name="p1" value="3" class="text-blue-600 focus:ring-blue-500">
+                                <span class="ml-3 text-sm font-medium">8h ou mais</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div>
+                        <label class="block font-semibold text-lg mb-3">2. Como você organiza sua rotina de estudos e aprendizado?</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <label class="flex items-center p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                                <input type="radio" name="p2" value="1" class="text-blue-600 focus:ring-blue-500" required>
+                                <span class="ml-3 text-sm font-medium">Deixo para a última hora</span>
+                            </label>
+                            <label class="flex items-center p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                                <input type="radio" name="p2" value="2" class="text-blue-600 focus:ring-blue-500">
+                                <span class="ml-3 text-sm font-medium">Estudo quando sobra tempo</span>
+                            </label>
+                            <label class="flex items-center p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                                <input type="radio" name="p2" value="3" class="text-blue-600 focus:ring-blue-500">
+                                <span class="ml-3 text-sm font-medium">Tenho horários fixos e metas</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div>
+                        <label class="block font-semibold text-lg mb-3">3. Quanto tempo você dedica por semana a habilidades práticas ou tecnologia?</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <label class="flex items-center p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                                <input type="radio" name="p3" value="1" class="text-blue-600 focus:ring-blue-500" required>
+                                <span class="ml-3 text-sm font-medium">Nenhum tempo</span>
+                            </label>
+                            <label class="flex items-center p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                                <input type="radio" name="p3" value="2" class="text-blue-600 focus:ring-blue-500">
+                                <span class="ml-3 text-sm font-medium">1 a 3 horas</span>
+                            </label>
+                            <label class="flex items-center p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-900 transition-all">
+                                <input type="radio" name="p3" value="3" class="text-blue-600 focus:ring-blue-500">
+                                <span class="ml-3 text-sm font-medium">Mais de 4 horas</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-lg transition-all shadow-lg shadow-blue-500/25 active:scale-95">
+                        Ver Meu Diagnóstico
+                    </button>
+                </form>
+
+                <!-- Resultado -->
+                <div id="quizResult" class="hidden mt-8 p-6 rounded-2xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800">
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-blue-600 text-white rounded-xl">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 id="resultTitle" class="text-xl font-bold mb-2"></h4>
+                            <p id="resultText" class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4"></p>
+                            <button id="resetQuiz" class="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                                Refazer teste
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mural de Ideias -->
+    <section id="mural" class="py-20 bg-slate-100/50 dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-3">Mural de Sugestões & Ideias</h2>
+                <p class="text-slate-600 dark:text-slate-400">Qual mudança você gostaria de ver na educação dos jovens? Compartilhe abaixo!</p>
+            </div>
+
+            <!-- Formulário de Sugestão -->
+            <div class="max-w-2xl mx-auto mb-12">
+                <form id="ideaForm" class="glass-card p-6 rounded-2xl space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" id="authorInput" placeholder="Seu Nome ou Apelido" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                        <select id="categoryInput" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                            <option value="Educação Tech">Educação Tech</option>
+                            <option value="Saúde Mental">Saúde Mental</option>
+                            <option value="Infraestrutura">Infraestrutura</option>
+                            <option value="Carreira">Carreira</option>
+                        </select>
+                    </div>
+                    <textarea id="ideaInput" rows="3" placeholder="Escreva sua proposta para melhorar a vida/ensino dos jovens..." required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"></textarea>
+                    <button type="submit" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-all shadow-md shadow-blue-500/20 active:scale-95 flex items-center justify-center gap-2">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>Publicar Ideia</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Lista de Card das Ideias -->
+            <div id="ideiasContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Inserido dinamicamente via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-slate-200 dark:border-slate-800 py-10 bg-white dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <div>
+                <p class="font-bold text-lg">Jovens do Futuro</p>
+                <p class="text-sm text-slate-500">Projeto para a melhoria da educação e qualidade de vida jovem.</p>
+            </div>
+            <div class="text-sm text-slate-500">
+                Pronto para implantação no <span class="font-semibold text-slate-700 dark:text-slate-300">GitHub Pages</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts da Aplicação -->
+    <script>
+        // Inicializar Lucide Icons
+        lucide.createIcons();
+
+        // Dark Mode Toggle
+        const themeToggleBtn = document.getElementById('themeToggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Quiz Logic
+        const quizForm = document.getElementById('quizForm');
+        const quizResult = document.getElementById('quizResult');
+        const resultTitle = document.getElementById('resultTitle');
+        const resultText = document.getElementById('resultText');
+        const resetQuiz = document.getElementById('resetQuiz');
+
+        quizForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(quizForm);
+            let score = 0;
+            for (let value of formData.values()) {
+                score += parseInt(value);
+            }
+
+            quizForm.classList.add('hidden');
+            quizResult.classList.remove('hidden');
+
+            if (score <= 4) {
+                resultTitle.innerText = "Alerta de Sobrecarga e Rotina";
+                resultText.innerText = "Sua rotina parece estar sobrecarregada ou desorganizada. É crucial reservar pausas, priorizar uma boa noite de sono e buscar formas mais leves de adquirir novos conhecimentos. Lembre-se: saúde mental é a base para o aprendizado.";
+            } else if (score <= 7) {
+                resultTitle.innerText = "Caminho do Equilíbrio";
+                resultText.innerText = "Você possui bons hábitos, mas ainda há espaço para evolução! Tente estruturar melhor seu tempo de estudo para incluir habilidades práticas de tecnologia e soft skills, mantendo seu descanso em dia.";
+            } else {
+                resultTitle.innerText = "Jovem do Futuro!";
+                resultText.innerText = "Parabéns! Você mantém uma ótima gestão do seu tempo, prioriza o bem-estar e investe em competências relevantes. Continue compartilhando seus aprendizados com seus colegas!";
+            }
+        });
+
+        resetQuiz.addEventListener('click', () => {
+            quizForm.reset();
+            quizResult.classList.add('hidden');
+            quizForm.classList.remove('hidden');
+        });
+
+        // Mural de Ideias (LocalStorage)
+        const ideaForm = document.getElementById('ideaForm');
+        const ideiasContainer = document.getElementById('ideiasContainer');
+
+        let ideias = JSON.parse(localStorage.getItem('jovens_ideias')) || [
+            {
+                id: 1,
+                author: "Mariana Costa",
+                category: "Saúde Mental",
+                text: "Aulas quinzenais sobre inteligência emocional e suporte psicológico nas escolas públicas.",
+                likes: 14
+            },
+            {
+                id: 2,
+                author: "Lucas Tech",
+                category: "Educação Tech",
+                text: "Criação de clubes de robótica e lógica de programação abertos à comunidade no fim de semana.",
+                likes: 22
+            },
+            {
+                id: 3,
+                author: "Beatriz Lima",
+                category: "Carreira",
+                text: "Workshops de orientação profissional e elaboração de currículos para alunos do 3º ano.",
+                likes: 9
+            }
+        ];
+
+        function renderIdeias() {
+            ideiasContainer.innerHTML = '';
+            ideias.forEach(ideia => {
+                const card = document.createElement('div');
+                card.className = 'glass-card p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition-all';
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300">
+                                ${ideia.category}
+                            </span>
+                            <span class="text-xs text-slate-400 font-medium">${ideia.author}</span>
+                        </div>
+                        <p class="text-slate-700 dark:text-slate-300 text-sm mb-4 leading-relaxed">
+                            "${ideia.text}"
+                        </p>
+                    </div>
+                    <div class="flex justify-end items-center border-t border-slate-200/50 dark:border-slate-800/50 pt-3">
+                        <button onclick="likeIdeia(${ideia.id})" class="flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-rose-500 transition-colors">
+                            <i data-lucide="heart" class="w-4 h-4"></i>
+                            <span>${ideia.likes}</span>
+                        </button>
+                    </div>
+                `;
+                ideiasContainer.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        window.likeIdeia = function(id) {
+            ideias = ideias.map(item => {
+                if (item.id === id) {
+                    return { ...item, likes: item.likes + 1 };
+                }
+                return item;
+            });
+            localStorage.setItem('jovens_ideias', JSON.stringify(ideias));
+            renderIdeias();
+        };
+
+        ideaForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const author = document.getElementById('authorInput').value;
+            const category = document.getElementById('categoryInput').value;
+            const text = document.getElementById('ideaInput').value;
+
+            const newIdea = {
+                id: Date.now(),
+                author,
+                category,
+                text,
+                likes: 0
+            };
+
+            ideias.unshift(newIdea);
+            localStorage.setItem('jovens_ideias', JSON.stringify(ideias));
+            renderIdeias();
+
+            ideaForm.reset();
+        });
+
+        // Renderização inicial
+        renderIdeias();
+    </script>
+</body>
+</html>
